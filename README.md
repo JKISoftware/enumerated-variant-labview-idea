@@ -2,6 +2,8 @@
 
 This repository contains a demonstration of a concept for a new LabVIEW feature and design pattern. All the code in this example could be used in practice, today.  Its purpose is to both show both (A) the benefits of this design pattern and (B) areas where LabVIEW could be improved at a language level to implement some of the core functionality natively.
 
+![High Level Example](docs/example_equipment_variant.png)
+
 ## Motivation
 
 Some languages like [Rust](https://www.rustlang.org ) and [Zig](https://www.ziglang.org) have a feature called Tagged Enums (or Sum Types) that allow you to create a data type that can be one of a few different types where there is a name associated with each type.  In LabVIEW, however, Enums are limited to consecutive numeric integer values -- there's no way to associate a type with each named value.
