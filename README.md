@@ -1,4 +1,9 @@
 # Enumerated Variant Data Type - LabVIEW Idea
+[LabVIEW Idea Exchange Post](https://forums.ni.com/t5/LabVIEW-Idea-Exchange/quot-Enumerated-Variant-quot-Data-Type-like-Rust-and-Zig-have/idi-p/4362485)
+
+[![image](https://github.com/JKISoftware/enumerated-variant-labview-idea/assets/381432/961a56f8-3be8-41db-ab73-ed1914e622d8)](https://forums.ni.com/t5/LabVIEW-Idea-Exchange/quot-Enumerated-Variant-quot-Data-Type-like-Rust-and-Zig-have/idi-p/4362485)
+
+☝️Click to give it a star.
 
 This repository contains a demonstration of a concept for a new LabVIEW feature and design pattern. All the code in this example could be used in practice, today.  Its purpose is to both show both (A) the benefits of this design pattern and (B) areas where LabVIEW could be improved at a language level to implement some of the core functionality natively.
 
