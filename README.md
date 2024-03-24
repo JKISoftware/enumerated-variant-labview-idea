@@ -7,15 +7,45 @@
 
 This repository contains a demonstration of a concept for a new LabVIEW feature and design pattern. All the code in this example could be used in practice, today.  Its purpose is to both show both (A) the benefits of this design pattern and (B) areas where LabVIEW could be improved at a language level to implement some of the core functionality natively.
 
-![High Level Example](docs/example_equipment_variant.png)
+# What is an Enumerated Variant?
 
-## Motivation
+The idea is fairly simple, for each item in an Enum, we can associate a specific data type.  This allows us to create a new data type that can be one of a few different types where there is a name associated with each type.
 
-Some languages like [Rust](https://www.rustlang.org ) and [Zig](https://www.ziglang.org) have a feature called Tagged Enums (or Sum Types) that allow you to create a data type that can be one of a few different types where there is a name associated with each type.  In LabVIEW, however, Enums are limited to consecutive numeric integer values -- there's no way to associate a type with each named value.
+> Note: This is similar to a tagged union or sum type in other languages. See [zig tagged union](https://ziglang.org/documentation/master/#Tagged-union) and [rust enums](https://doc.rust-lang.org/reference/items/enumerations.html).
 
-The power of combining an Enum with a set of data types for each value is that we could potentially use a Case Structure as a switch statement with type assertion and data conversion built in!  This would allow us to create a more robust and type-safe code base that is easier to maintain and understand.
+## 1) Allow adding a specific datatype to each item of an Enum
 
-## Combining LabVIEW Enums with Data Types
+![Native Controls](docs/native_controls.png)
+
+## 2) Allow coercing these "variants" of our specific Enum type to and from the Enum type
+
+![Native Coercion](docs/native_coercion.png)
+
+## 3) Allow using these "Enumerated Variants in a Case Structure, such that conversion to the specific data type is done automatically.
+
+![Native Case Structure](docs/native_case_structure_support.png)
+
+## 4) Consider Organizing in an LVLib or LVClass (or maybe even create a new LVType?)
+We might consider organizing Enumerated Variants in a Library, like an `.lvclass` or  `.lvlib` -- that part is up for debate. We'll see in the proof of concept example, code that an LVClass was used, and it works pretty well.
+
+# Motivation - Why not just use classes and dynamic dispatch?
+
+The first question you might be asking is "Why not just use classes and dynamic dispatch?"
+
+That's a fair question.  In LabVIEW, we can use classes and dynamic dispatch to achieve similar functionality. However, Dynamic Dispatch has some some limitations/challenges.
+
+Dynamic Dispatch Limitations:
+
+- Requires creating a new base class for the group of types you want to consider as a single type (which isn't horrible, since it's just one class).
+- Requires creating a new class for each specific type (this adds a lot of boilerplate code to maintain).
+- Run-time overhead of dynamic dispatch is greater than direct calls (which can be a problem in performance-critical applications)
+- Dynamic indirection of method calls (makes it harder to reason about and debug/follow the code execution paths).
+
+Simply put, the dynamic dispatch approach requires more boilerplate code and is less efficient than a native language feature that could do the same thing. Unless your application really needs a plug-in architecture or you are creating a library for others to use, the dynamic dispatch approach is probably more work than the benefit it provides. I have an expression I like to use: "Early abstraction is obstruction."  In other words, don't abstract until you need to.
+
+As mentioned above, the power of (1) combining an Enum with a set of data types for each value and adding native support for (2) coercion and (3) Case Structure type assertion and data conversion would allow us to create a more robust and type-safe LabVIEW code that is easier to maintain and understand (especially in situations where we do not gain much benefit from the expense of building an maintaining a plug-in architecture).
+
+# Proof of Concept: Combining LabVIEW Enums with Data Types
 
 In LabVIEW today, we can get close to such a feature by bundling an enum and a variant into a cluster or (as this example explores more deeply) an "object" (lvclass private data).
 
