@@ -13,12 +13,18 @@
 		<Property Name="server.vi.callsEnabled" Type="Bool">true</Property>
 		<Property Name="server.vi.propertiesEnabled" Type="Bool">true</Property>
 		<Property Name="specify.custom.address" Type="Bool">false</Property>
-		<Item Name="Robot.lvclass" Type="LVClass" URL="../Robot/Robot.lvclass"/>
-		<Item Name="Pump.lvclass" Type="LVClass" URL="../Pump/Pump.lvclass"/>
+		<Item Name="sub-types" Type="Folder">
+			<Item Name="Robot.lvclass" Type="LVClass" URL="../Robot/Robot.lvclass"/>
+			<Item Name="Pump.lvclass" Type="LVClass" URL="../Pump/Pump.lvclass"/>
+		</Item>
+		<Item Name="Examples" Type="Folder">
+			<Item Name="Example - Class.vi" Type="VI" URL="../Example - Class.vi"/>
+			<Item Name="Control Examples.vi" Type="VI" URL="../Control Examples.vi"/>
+			<Item Name="Example - Cluster.vi" Type="VI" URL="../Example - Cluster.vi"/>
+			<Item Name="Example - Type Assertion.vi" Type="VI" URL="../Example - Type Assertion.vi"/>
+		</Item>
 		<Item Name="EnumeratedVariant.lvclass" Type="LVClass" URL="../EnumeratedVariant/EnumeratedVariant.lvclass"/>
 		<Item Name="EquipmentVariant.lvclass" Type="LVClass" URL="../EquipmentVariant/EquipmentVariant.lvclass"/>
-		<Item Name="Example - Enumerated Variant data type.vi" Type="VI" URL="../Example - Enumerated Variant data type.vi"/>
-		<Item Name="Control Examples.vi" Type="VI" URL="../Control Examples.vi"/>
 		<Item Name="Dependencies" Type="Dependencies"/>
 		<Item Name="Build Specifications" Type="Build"/>
 	</Item>
