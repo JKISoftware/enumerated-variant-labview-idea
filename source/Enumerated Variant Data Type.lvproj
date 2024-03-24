@@ -13,7 +13,6 @@
 		<Property Name="server.vi.callsEnabled" Type="Bool">true</Property>
 		<Property Name="server.vi.propertiesEnabled" Type="Bool">true</Property>
 		<Property Name="specify.custom.address" Type="Bool">false</Property>
-		<Item Name="Support VIMs" Type="Folder"/>
 		<Item Name="Robot.lvclass" Type="LVClass" URL="../Robot/Robot.lvclass"/>
 		<Item Name="Pump.lvclass" Type="LVClass" URL="../Pump/Pump.lvclass"/>
 		<Item Name="EnumeratedVariant.lvclass" Type="LVClass" URL="../EnumeratedVariant/EnumeratedVariant.lvclass"/>
