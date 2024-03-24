@@ -1,11 +1,12 @@
 # Enumerated Variant Data Type - LabVIEW Idea
-[LabVIEW Idea Exchange Post](https://forums.ni.com/t5/LabVIEW-Idea-Exchange/quot-Enumerated-Variant-quot-Data-Type-like-Rust-and-Zig-have/idi-p/4362485)
-
-[![image](https://github.com/JKISoftware/enumerated-variant-labview-idea/assets/381432/961a56f8-3be8-41db-ab73-ed1914e622d8)](https://forums.ni.com/t5/LabVIEW-Idea-Exchange/quot-Enumerated-Variant-quot-Data-Type-like-Rust-and-Zig-have/idi-p/4362485)
-
-☝️Click to give it a star.
 
 This repository contains a demonstration of a concept for a new LabVIEW feature and design pattern. All the code in this example could be used in practice, today.  Its purpose is to both show both (A) the benefits of this design pattern and (B) areas where LabVIEW could be improved at a language level to implement some of the core functionality natively.
+
+> This is also a [LabVIEW Idea Exchange Post](https://forums.ni.com/t5/LabVIEW-Idea-Exchange/quot-Enumerated-Variant-quot-Data-Type-like-Rust-and-Zig-have/idi-p/4362485)
+> 
+> [![image](https://github.com/JKISoftware/enumerated-variant-labview-idea/assets/381432/961a56f8-3be8-41db-ab73-ed1914e622d8)](https://forums.ni.com/t5/LabVIEW-Idea-Exchange/quot-Enumerated-Variant-quot-Data-Type-like-Rust-and-Zig-have/idi-p/4362485)
+> 
+> ☝️ Click to give it a star, if you think NI should implement it in a future version of LabVIEW! 
 
 # What is an Enumerated Variant?
 
@@ -127,13 +128,13 @@ Let's say that again...
 
 Hopefully we've shown the usefulness of an Enumerated Variant type in LabVIEW and how we can get close to this feature using Malleable VIs and LabVIEW classes.
 
-First, we looked at a simple feature proposal in LabVIEW that would allow us to associate a specific data type with each item in an Enum and how adding support for data coercion and integration with the Case Structure would be a huge benefit to LabVIEW developers.
+- First, we looked at a simple feature proposal in LabVIEW that would allow us to associate a specific data type with each item in an Enum and how adding support for data coercion and integration with the Case Structure would be a huge benefit to LabVIEW developers.
 
-Next, we looked at how we might achieve this with a cluster of Enum and Variant.
+- Next, we looked at how we might achieve this with a cluster of Enum and Variant.
 
-Then, we added some boilerplate code to a base class that would allow us to create a specific type of Enumerated Variant with minimal code duplication.
+- Then, we added some boilerplate code to a base class that would allow us to create a specific type of Enumerated Variant with minimal code duplication.
 
-Finally, we implemented as much static type checking as is possible today using Malleable VIs and Type Specialization Structures.
+- Finally, we implemented as much static type checking as is possible today using Malleable VIs and Type Specialization Structures.
 
 We hope this example has been helpful and that you can see the benefits of this design pattern and feature proposal.  We'd love to hear your feedback and ideas for how this could be improved or implemented in LabVIEW.
 
